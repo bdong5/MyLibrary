@@ -15,6 +15,18 @@
         android:theme="@style/Theme.MyLibrary"
         tools:targetApi="31">
         <activity
+            android:name=".FavoriteBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CurrentlyReadingBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WantToReadBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlreadyReadBookActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookActivity"
             android:exported="false" />
         <activity
