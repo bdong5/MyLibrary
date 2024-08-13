@@ -31,7 +31,7 @@ public class AllBooksActivity extends AppCompatActivity {
             return insets;
         });
 
-        adapter = new BookRecViewAdapter(this);
+        adapter = new BookRecViewAdapter(this, "allBooks");
         booksRecView = findViewById(R.id.booksRecView);
         booksRecView.setAdapter(adapter);
         booksRecView.setLayoutManager(new LinearLayoutManager(this));

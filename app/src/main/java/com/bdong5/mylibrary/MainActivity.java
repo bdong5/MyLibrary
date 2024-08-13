@@ -58,6 +58,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnFavourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FavoriteBookActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initViews() {
