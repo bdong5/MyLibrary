@@ -32,6 +32,7 @@ dependencies {
 
     implementation("com.google.android.material:material:1.5.0")
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation ("com.google.code.gson:gson:2.11.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
