@@ -29,7 +29,7 @@ public class Book {
         isExpanded = expanded;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

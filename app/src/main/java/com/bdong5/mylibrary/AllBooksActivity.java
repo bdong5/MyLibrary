@@ -1,6 +1,8 @@
 package com.bdong5.mylibrary;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 
 import androidx.activity.EdgeToEdge;
@@ -37,7 +39,20 @@ public class AllBooksActivity extends AppCompatActivity {
         booksRecView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        adapter.setBooks(Utils.getInstance(this).getAllBooks());
+//        adapter.setBooks(Utils.getInstance(this).getAllBooks());
+        Utils.getInstance(this).getAllBooks(new Utils.FirebaseCallback<ArrayList<Book>>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onCallback(ArrayList<Book> result) {
+                adapter.setBooks(result);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                Log.w("Firestore", "Error getting books", e);
+            }
+        });
 
     }
 }

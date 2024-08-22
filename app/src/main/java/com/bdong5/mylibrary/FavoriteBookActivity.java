@@ -37,7 +37,8 @@ public class FavoriteBookActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter.setBooks((Utils.getInstance(this).getFavoriteBooks()));
+//        adapter.setBooks((Utils.getInstance(this).getFavoriteBooks()));
+
     }
 
 }
