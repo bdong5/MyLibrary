@@ -39,7 +39,6 @@ public class AllBooksActivity extends AppCompatActivity {
         booksRecView.setLayoutManager(new LinearLayoutManager(this));
 
 
-//        adapter.setBooks(Utils.getInstance(this).getAllBooks());
         Utils.getInstance(this).getAllBooks(new Utils.FirebaseCallback<ArrayList<Book>>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override

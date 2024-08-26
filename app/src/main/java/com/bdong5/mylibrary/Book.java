@@ -1,7 +1,7 @@
 package com.bdong5.mylibrary;
 
 public class Book {
-    private int id;
+    private String id;
     private String name;
     private String author;
     private int pages;
@@ -10,7 +10,7 @@ public class Book {
     private String longDesc;
     private boolean isExpanded;
 
-    public Book(int id, String name, String author, int pages, String imageURL, String shortDesc, String longDesc) {
+    public Book(String id, String name, String author, int pages, String imageURL, String shortDesc, String longDesc) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -33,7 +33,7 @@ public class Book {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

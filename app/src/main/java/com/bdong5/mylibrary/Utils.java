@@ -64,9 +64,9 @@ public class Utils {
     private void initData() {
 
         ArrayList<Book> books = new ArrayList<>();
-        books.add(new Book(1, "1Q84", "Haruki Murakami", 1350, "https://m.media-amazon.com/images/I/71oaO3Pxx-L._AC_UF1000,1000_QL80_.jpg",
+        books.add(new Book("1", "1Q84", "Haruki Murakami", 1350, "https://m.media-amazon.com/images/I/71oaO3Pxx-L._AC_UF1000,1000_QL80_.jpg",
                 "A work of maddening brilliance", "Long Desc"));
-        books.add(new Book(2, "Diary of a Wimpy Kid", "Jeff Kinney", 217, "https://upload.wikimedia.org/wikipedia/en/8/84/Diary_of_a_Wimpy_Kid_book_cover.jpg",
+        books.add(new Book("2", "Diary of a Wimpy Kid", "Jeff Kinney", 217, "https://upload.wikimedia.org/wikipedia/en/8/84/Diary_of_a_Wimpy_Kid_book_cover.jpg",
                 "An educational masterpiece", "Long Desc"));
 
 
@@ -276,7 +276,7 @@ public class Utils {
     public void addToWantToRead(Book book) {
 
         DocumentReference bookRef = booksRef.document(book.getId()); // Reference specific book by bookId
-        CollectionReference wantToReadRef = bookRef.collection("want_to_read"); // reference collection
+        CollectionReference wantToReadRef = bookRef.collection("want_to_read"); // reference specific collection
 
 
         wantToReadRef.add(book).addOnSuccessListener(documentReference -> {

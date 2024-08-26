@@ -1,7 +1,9 @@
 package com.bdong5.mylibrary;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class AlreadyReadBookActivity extends AppCompatActivity {
 
@@ -41,8 +45,20 @@ public class AlreadyReadBookActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        adapter.setBooks((Utils.getInstance(this).getAlreadyReadBooks()));
+//        adapter.setBooks((Utils.getInstance(this).getAlreadyReadBooks()));
+        Utils.getInstance(this).getAlreadyReadBooks(new Utils.FirebaseCallback<ArrayList<Book>>() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onCallback(ArrayList<Book> result) {
+                adapter.setBooks(result);
+                adapter.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onFailure(Exception e) {
+                Log.w("Firestore", "Error getting books", e);
+            }
+        });
 
     }
 }
