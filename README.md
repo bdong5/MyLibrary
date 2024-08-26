@@ -1,6 +1,6 @@
 # Library App
 
-The Library App is an Android application designed to facilitate the management of personal reading lists. Users can organize books into various categories, including "Want to Read," "Currently Reading," "Already Read," and "Favorites." The application leverages Firebase Firestore for secure and reliable data storage.
+The Library App is an **Android** application designed to facilitate the management of personal reading lists. Users can organize books into various categories. The application leverages **Firebase Firestore** for secure and reliable data storage.
 
 ## Features
 
