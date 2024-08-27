@@ -38,7 +38,3 @@ The Library App is an **Android** application designed to facilitate the managem
 ## Usage
 
 Once installed, users can begin adding books to their lists, view details of each book, and organize them based on their reading status. The application will automatically synchronize data with Firebase Firestore.
-
-## License
-
-Who needs one?
